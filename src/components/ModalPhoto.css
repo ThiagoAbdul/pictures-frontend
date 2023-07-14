@@ -1,0 +1,26 @@
+.ModalPhoto{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);   
+}
+
+.ModalPhoto div {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.ModalPhoto div > * {
+    height: 100%;
+    width: 12rem;
+}

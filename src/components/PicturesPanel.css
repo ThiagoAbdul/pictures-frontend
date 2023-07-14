@@ -1,0 +1,26 @@
+.PicturesPanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    width: 44rem;
+    flex-direction: column;
+}
+
+.PicturesPanel ul{
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+}
+
+.PicturesPanel .first {
+    background-color: unset;
+    box-shadow: unset;
+}
+
+.PicturesPanel .icon:hover {
+    color: var(--primary-color);
+}

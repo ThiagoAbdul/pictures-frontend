@@ -1,0 +1,16 @@
+.Photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    width: 100%;
+    aspect-ratio: 1;
+    text-align: center;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: .25s ease-in;
+}
+
+.Photo:hover{
+    transform: scale(105%);
+}
