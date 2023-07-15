@@ -1,37 +1,21 @@
-import { useState } from 'react'
+import { createRoot } from 'react-dom/client'
 import './InputPhoto.css'
+import { BiImageAdd } from 'react-icons/bi'
+import ModalPhoto from './ModalPhoto'
 
-import { BiCheck, BiImageAdd, BiX } from 'react-icons/bi'
+const apiUrl = `${import.meta.env.VITE_API_URL}/api/photos`
 
 export default function InputPhoto(){
-    const apiUrl = `${import.meta.env.VITE_API_URL}/api/photos` 
 
     const getInputFile = () => document.getElementById('inputFile').files[0]
-
-    const labelInputFile = <label htmlFor='inputFile'>
-        <BiImageAdd className='icon'/>
-    </label>
-
-    const [icons, setIcons] = useState(labelInputFile)
 
     const handleOnSetFile = () => {
         const file = getInputFile()
         if(file){
             const reader = new FileReader()
             reader.addEventListener('load', () => {
-                const inputContainer = document.querySelector('.InputPhoto')
-                inputContainer.style.backgroundImage = `url(${reader.result})`
-                inputContainer.style.backgroundSize = 'cover'
-                setIcons(
-                  <>
-                    <BiX onClick={() => {
-                        setIcons(labelInputFile)
-                        inputContainer.style.backgroundImage = 'none'
-                    }}
-                    />
-                    <BiCheck onClick={postPhoto}/>
-                  </>
-                )
+                const root = createRoot(document.getElementById('main'))
+                root.render(<ModalPhoto src={reader.result}/>)
             })
             reader.readAsDataURL(file)
         }
@@ -53,7 +37,9 @@ export default function InputPhoto(){
     return (
         <form className='InputPhoto'>
             <li>
-                {icons}
+            <label htmlFor='inputFile'>
+                <BiImageAdd className='icon'/>
+            </label>
                 <input type='file' name="inputFile" id="inputFile"  accept="image/png, image/jpeg" onChange={handleOnSetFile}/>
             </li>
         </form>

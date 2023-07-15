@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
     <Nav></Nav>
-      <main>
+      <main id='main'>
         <PicturesPanel></PicturesPanel>
       </main>
     </>

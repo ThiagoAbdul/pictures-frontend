@@ -1,7 +1,7 @@
 .InputPhoto{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     width: 100%;
     aspect-ratio: 1;
     text-align: center;
@@ -10,12 +10,15 @@
 .InputPhoto .icon {
     font-size: 3.5rem;
     transition: .2s ease-in;
-    cursor: pointer;
     color: black;
-    
+    cursor: pointer;
+    margin: 4px;
 }
 
 .InputPhoto input[type="file"]{
     display: none;
 }
 
+.InputPhoto .icon:hover {
+    color: var(--primary-color);
+}
