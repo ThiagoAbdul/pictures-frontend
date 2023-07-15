@@ -7,9 +7,10 @@ export default function App() {
   return (
     <>
     <Nav></Nav>
-      <main id='main'>
+      <main>
         <PicturesPanel></PicturesPanel>
       </main>
+      <section id='modal'></section>
     </>
   )
 }
