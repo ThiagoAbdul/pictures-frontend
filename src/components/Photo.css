@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #444;
     width: 100%;
     aspect-ratio: 1;
     text-align: center;
@@ -12,5 +11,9 @@
 }
 
 .Photo:hover{
-    transform: scale(105%);
+    outline: 1px solid var(--light-color);
+}
+
+.Photo img{
+    width: 100%;
 }
